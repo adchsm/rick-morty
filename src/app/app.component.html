@@ -1,1 +1,19 @@
-<router-outlet />
+<h1>Rick & Morty Characters</h1>
+
+<h2>Loading</h2>
+
+<p>Loading: {{ isLoading() }}</p>
+
+<h2>Characters</h2>
+
+@if (characters()) {
+<pre>{{ characters() | json }}</pre>
+}
+
+<h2>Error</h2>
+
+@if (error()) {
+<pre>{{ error() | json }}</pre>
+} @else {
+<p>No errors...</p>
+}

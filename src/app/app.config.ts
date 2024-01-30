@@ -1,3 +1,4 @@
+import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideStore({ rickMorty: rickMortyReducer }),
     provideEffects([RickMortyEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: isDevMode() }),
+    provideHttpClient(),
   ],
 };
