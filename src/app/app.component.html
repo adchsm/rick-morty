@@ -1,53 +1,9 @@
-<h1>Rick & Morty Characters</h1>
+<div class="app-layout">
+  <div class="app-navbar">
+    <app-navbar />
+  </div>
 
-<h2>Autocomplete</h2>
-
-<form [formGroup]="form">
-  <mat-form-field>
-    <mat-label>Characters</mat-label>
-    <input
-      type="text"
-      placeholder="Select your favourite character or start typing to search"
-      matInput
-      formControlName="character"
-      [matAutocomplete]="auto"
-    />
-    <mat-autocomplete
-      autoActiveFirstOption
-      #auto="matAutocomplete"
-      [displayWith]="displayFn"
-    >
-      @for (character of characters(); track character.id) {
-      <mat-option [value]="character">
-        {{ character.name }} (ID: {{ character.id }})
-      </mat-option>
-      }
-    </mat-autocomplete>
-  </mat-form-field>
-</form>
-
-<h3>Favourite character</h3>
-
-@if (favouriteCharacter(); as character) {
-<pre>{{ character | json }}</pre>
-}
-
-<hr />
-
-<h2>Loading</h2>
-
-<p>Loading: {{ isLoading() }}</p>
-
-<h2>Characters</h2>
-
-@if (characters(); as characters) {
-<pre>{{ characters | json }}</pre>
-}
-
-<h2>Error</h2>
-
-@if (error(); as error) {
-<pre>{{ error | json }}</pre>
-} @else {
-<p>No errors...</p>
-}
+  <div class="app-content">
+    <router-outlet />
+  </div>
+</div>
