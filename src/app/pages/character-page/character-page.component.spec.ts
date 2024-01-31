@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideMockStore } from '@ngrx/store/testing';
 import { CharacterPageComponent } from './character-page.component';
 
 describe('CharacterPageComponent', () => {
@@ -7,7 +9,8 @@ describe('CharacterPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CharacterPageComponent],
+      imports: [CharacterPageComponent, BrowserAnimationsModule],
+      providers: [provideMockStore()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CharacterPageComponent);

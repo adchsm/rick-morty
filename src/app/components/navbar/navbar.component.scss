@@ -1,3 +1,8 @@
+mat-toolbar {
+  background-color: #00b5cc;
+  justify-content: center;
+}
+
 .align-button-content {
   display: flex;
   align-items: center;
@@ -5,8 +10,4 @@
 
 svg {
   margin-right: 8px;
-}
-
-.align-right {
-  margin-left: auto;
 }

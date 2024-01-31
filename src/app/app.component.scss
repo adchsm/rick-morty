@@ -1,8 +1,16 @@
-.app-layout {
+.app {
   display: flex;
   flex-direction: column;
-}
+  min-height: 100vh;
+  background: linear-gradient(
+    186deg,
+    #b3df29 0%,
+    #b3df29 50vh,
+    #ffffff 50vh,
+    #ffffff 100%
+  );
 
-.app-content {
-  padding: 32px;
+  &-content {
+    margin: 32px;
+  }
 }
