@@ -11,7 +11,9 @@ export class RickMortyService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getCharacters(): Observable<CharacterResponse> {
-    return this.httpClient.get<CharacterResponse>(`${this.baseUrl}/character`);
+  public getCharacters(searchTerm?: string): Observable<CharacterResponse> {
+    return this.httpClient.get<CharacterResponse>(`${this.baseUrl}/character`, {
+      ...(searchTerm && { params: { name: searchTerm } }),
+    });
   }
 }

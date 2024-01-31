@@ -11,7 +11,7 @@ describe('RickMortyActions', () => {
   const characters: Character[] = [...mockCharacters];
 
   it('should create the getCharacters action', () => {
-    const action = getCharacters();
+    const action = getCharacters({});
 
     expect({ ...action }).toEqual({
       type: `[${RICK_MORTY_CONSTANTS.STORE_KEY}] get characters`,

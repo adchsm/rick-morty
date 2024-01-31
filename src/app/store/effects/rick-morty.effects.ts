@@ -13,8 +13,8 @@ export class RickMortyEffects {
   getCharacters$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getCharacters),
-      exhaustMap(() =>
-        this.rickMortyService.getCharacters().pipe(
+      exhaustMap(({ searchTerm }) =>
+        this.rickMortyService.getCharacters(searchTerm).pipe(
           map(({ results }) => getCharactersSuccess({ characters: results })),
           catchError((error) => of(getCharactersFailure({ error })))
         )

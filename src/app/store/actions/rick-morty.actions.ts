@@ -3,7 +3,8 @@ import { RICK_MORTY_CONSTANTS } from '../../constants/rick-morty.constants';
 import { Character } from '../../models/rick-morty.models';
 
 export const getCharacters = createAction(
-  `[${RICK_MORTY_CONSTANTS.STORE_KEY}] get characters`
+  `[${RICK_MORTY_CONSTANTS.STORE_KEY}] get characters`,
+  props<{ searchTerm?: string }>()
 );
 
 export const getCharactersSuccess = createAction(

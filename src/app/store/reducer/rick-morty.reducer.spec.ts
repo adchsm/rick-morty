@@ -17,7 +17,7 @@ describe('RickMortyReducer', () => {
   };
 
   it('should handle getCharacters action', () => {
-    const action = getCharacters();
+    const action = getCharacters({});
     const state = rickMortyReducer(initialState, action);
 
     expect(state).toEqual({

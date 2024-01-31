@@ -51,7 +51,7 @@ describe('RickMortyEffects', () => {
         of({ ...mockCharacterResponse })
       );
 
-      actions$ = hot('-a---', { a: getCharacters() });
+      actions$ = hot('-a---', { a: getCharacters({}) });
 
       const expected = cold('-a---', {
         a: getCharactersSuccess({ characters: [...mockCharacters] }),
@@ -65,7 +65,7 @@ describe('RickMortyEffects', () => {
         throwError(() => new Error(''))
       );
 
-      actions$ = hot('-a---', { a: getCharacters() });
+      actions$ = hot('-a---', { a: getCharacters({}) });
 
       const expected = cold('-a---', {
         a: getCharactersFailure({ error: new Error('') }),
