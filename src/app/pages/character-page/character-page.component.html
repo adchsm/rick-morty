@@ -8,31 +8,11 @@
     profiles.
   </p>
 
-  <form [formGroup]="form">
-    <mat-form-field>
-      <mat-label>Characters</mat-label>
-      <input
-        type="text"
-        placeholder="Select your favourite character or start typing to search"
-        matInput
-        formControlName="character"
-        [matAutocomplete]="auto"
-      />
-      <mat-autocomplete
-        autoActiveFirstOption
-        #auto="matAutocomplete"
-        [displayWith]="displayFn"
-      >
-        @for (character of characters(); track character.id) {
-        <mat-option [value]="character">
-          {{ character.name }} (ID: {{ character.id }})
-        </mat-option>
-        }
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
+  <app-character-autocomplete-form
+    (characterSelected)="handleCharacterSelected($event)"
+  />
 
-  @if (favouriteCharacter(); as character) {
+  @if (selectedCharacter(); as character) {
   <pre>{{ character | json }}</pre>
   }
 </div>
