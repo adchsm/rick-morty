@@ -12,7 +12,5 @@
     (characterSelected)="handleCharacterSelected($event)"
   />
 
-  @if (selectedCharacter(); as character) {
-  <pre>{{ character | json }}</pre>
-  }
+  <app-character [character]="selectedCharacter()" />
 </div>

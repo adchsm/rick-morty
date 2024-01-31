@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,6 +5,7 @@ import {
   signal,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { CharacterComponent } from '../../components/character/character.component';
 import { CharacterAutocompleteFormComponent } from '../../containers/character-autocomplete-form/character-autocomplete-form.component';
 import { Character } from '../../models/rick-morty.models';
 import { getCharacters } from '../../store/actions/rick-morty.actions';
@@ -13,7 +13,7 @@ import { getCharacters } from '../../store/actions/rick-morty.actions';
 @Component({
   selector: 'app-character-page',
   standalone: true,
-  imports: [CommonModule, CharacterAutocompleteFormComponent],
+  imports: [CharacterAutocompleteFormComponent, CharacterComponent],
   templateUrl: './character-page.component.html',
   styleUrl: './character-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

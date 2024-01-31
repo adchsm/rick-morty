@@ -1,0 +1,36 @@
+@if (character) {
+<div class="character">
+  <img class="character-image" [src]="character.image" />
+
+  <h2>{{ character.name }}</h2>
+
+  <mat-list>
+    <mat-list-item><strong>ID:</strong> {{ character.id }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><strong>Name:</strong> {{ character.name }}</mat-list-item>
+    <mat-list-item>
+      <strong>Status:</strong> {{ character.status }}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Species:</strong> {{ character.species }}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Gender:</strong> {{ character.gender }}
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <strong>Origin:</strong> {{ character.origin.name }}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Location:</strong> {{ character.location.name }}
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item style="height: auto; padding: 8px 16px">
+      <div class="character-episode-list">
+        <strong>Appears in episode(s): </strong>
+        <span>{{ getEpisodeNumbers(character.episode) }}</span>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+}
